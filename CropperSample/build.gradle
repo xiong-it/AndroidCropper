@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 23
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+    }
+}
+
+dependencies {
+    compile project(':cropper')
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile "com.android.support:support-annotations:23.1.0"
+}
